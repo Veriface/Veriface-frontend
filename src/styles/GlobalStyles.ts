@@ -9,6 +9,7 @@ export default createGlobalStyle`
     font-weight: 400;
     font-style: normal;
 }
+
 *,
 *::after,
 *::before {

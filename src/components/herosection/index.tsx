@@ -43,6 +43,7 @@ const HeroSectionContainer = styled.div`
     ${mediaQueries.phone} {
       margin-top: 3rem;
     }
+    
     ${mediaQueries.smallerphone} {
       width: 60%;
       margin: 3rem auto 0rem;
@@ -51,7 +52,7 @@ const HeroSectionContainer = styled.div`
 
   .btn {
     margin: auto;
-    margin-top: 2rem;
+    margin-top: 3rem;
   }
 
   ${mediaQueries.phone} {
@@ -72,7 +73,7 @@ const HeroSection = () => {
         Buy, sell, and grow your crypto with Veriface, the platform dedicated
         to fishing out fraudsters.
       </Typography>
-      <Button className="btn"/>
+      <Button className="btn" />
     </HeroSectionContainer>
   );
 };

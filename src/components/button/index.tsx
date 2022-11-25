@@ -6,6 +6,7 @@ import { FunctionComponent } from "react";
 type BtnProps = {
     className?: string;
 }
+
 const StyledButton = styled(ConnectButton)`
   font-family: "Inter";
   font-style: normal;
