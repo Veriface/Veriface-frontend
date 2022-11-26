@@ -43,7 +43,7 @@ const HeroSectionContainer = styled.div`
     ${mediaQueries.phone} {
       margin-top: 3rem;
     }
-    
+
     ${mediaQueries.smallerphone} {
       width: 60%;
       margin: 3rem auto 0rem;
@@ -60,7 +60,6 @@ const HeroSectionContainer = styled.div`
     padding: 2rem;
   }
 `;
-
 
 const HeroSection = () => {
   return (

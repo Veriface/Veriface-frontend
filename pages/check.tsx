@@ -1,9 +1,11 @@
-import React from 'react'
+import CheckBlackListPage from "../src/components/checkblacklistsection";
 
 const CheckPage = () => {
   return (
-    <div>CheckPage</div>
-  )
-}
+    <div>
+      <CheckBlackListPage />
+    </div>
+  );
+};
 
 export default CheckPage;

@@ -5,7 +5,6 @@ import Link from "next/link";
 import Button from "../button";
 import { SelectCardType } from "../../types/types";
 
-
 const CardContainer = styled.div`
   background: #1a1b23;
   border-radius: 2.5rem;
@@ -13,29 +12,30 @@ const CardContainer = styled.div`
   display: grid;
   place-items: center;
   gap: 3rem;
-  
+
   .title {
     text-align: center;
   }
-  
+
   .btn {
     background: none;
-    border: 1px solid #B982FF;
-    color: #B982FF;
+    border: 1px solid #b982ff;
+    color: #b982ff;
   }
-  
-  `
+`;
 
-
-const SelectionCard = ({ Icon, btnText, content }: SelectCardType) => {
+const SelectionCard = ({ Icon, btnText, content, href }: SelectCardType) => {
   return (
     <CardContainer>
       <Icon size="8rem" color="#B982FF" />
       <Typography font="bodyText" as="p" className="title">
-        {content}</Typography>
-      <Button className="btn">{btnText}</Button>
+        {content}
+      </Typography>
+      <Link href={href}>
+        <Button className="btn">{btnText}</Button>
+      </Link>
     </CardContainer>
-  )
-}
+  );
+};
 
-export default SelectionCard
+export default SelectionCard;

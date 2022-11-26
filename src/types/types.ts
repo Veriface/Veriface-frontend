@@ -14,4 +14,5 @@ export type SelectCardType = {
   Icon: any;
   btnText: string;
   content: string;
+  href: string;
 };
