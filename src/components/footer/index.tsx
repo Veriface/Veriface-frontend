@@ -39,7 +39,7 @@ const FooterBottomSection = styled(Flex)`
   border-top: 0.2rem solid grey;
   max-width: 93%;
   margin: 5rem auto;
-  padding: 1.5rem;
+  padding: 3rem 1.5rem;
   justify-content: space-between;
 `;
 
