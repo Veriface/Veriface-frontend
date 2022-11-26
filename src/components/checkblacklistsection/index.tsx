@@ -3,15 +3,21 @@ import styled from "styled-components";
 import Flex from "../../utils/flex/flex";
 import Typography from "../../utils/typography";
 import { BsSearch } from "react-icons/bs";
+import { mediaQueries } from "../../utils/themes/mediaQueries";
 
 const PageContainer = styled.div`
   background: #0b0b0f;
   color: white;
   height: 100vh;
+  overflow-y: scroll;
 `;
 
 const PageContent = styled.div`
   padding: 3rem 20%;
+
+  ${mediaQueries.tabport} {
+    padding: 3rem 10%;
+  }
 
   .title {
     color: #b982ff;
@@ -66,6 +72,10 @@ const PageContent = styled.div`
     padding: 3rem 0;
     max-width: 80rem;
     margin-top: 3rem;
+
+    ${mediaQueries.phone} {
+      padding: 5rem 0;
+    }
   }
 
   .innerText {
@@ -79,7 +89,7 @@ const CheckBlackListPage = () => {
       <Navigation />
       <PageContent>
         <Flex className="col-1">
-          <Typography font="h3" as="h3" className="title">
+          <Typography font="h2" as="h3" className="title">
             BLACKLIST CHECKER
           </Typography>
           <Typography font="bodyText" as="h3">
