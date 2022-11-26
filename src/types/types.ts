@@ -4,3 +4,8 @@ export type FeatureCardType = {
     title: string,
     content: string
 }
+
+export type BtnProps = {
+  className?: string;
+  children: React.ReactNode;
+};

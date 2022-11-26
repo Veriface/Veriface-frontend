@@ -1,11 +1,7 @@
 import { Button as ConnectButton } from "../../utils/button/button";
 import styled from "styled-components";
 import { FunctionComponent } from "react";
-
-
-type BtnProps = {
-    className?: string;
-}
+import { BtnProps } from "../../types/types";
 
 const StyledButton = styled(ConnectButton)`
   font-family: "Inter";
@@ -17,8 +13,8 @@ const StyledButton = styled(ConnectButton)`
   background: linear-gradient(225deg, #18c8ff 14.89%, #933ffe 85.85%);
 `;
 
-const Button:FunctionComponent<BtnProps> = ({className}) => {
-  return <StyledButton className={className}>Launch App</StyledButton>;
+const Button:FunctionComponent<BtnProps> = ({className, children}) => {
+  return <StyledButton className={className}>{children}</StyledButton>;
 };
 
 export default Button;

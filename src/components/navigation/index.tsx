@@ -33,7 +33,7 @@ const Navigation = () => {
         <Typography font="h3" as="h3" className="logo">
          VERIFACE
         </Typography>
-        <Button />
+        <Button>Launch App</Button>
       </NavContainer>
     );
 };
