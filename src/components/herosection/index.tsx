@@ -73,7 +73,7 @@ const HeroSection = () => {
         Buy, sell, and grow your crypto with Veriface, the platform dedicated
         to fishing out fraudsters.
       </Typography>
-      <Button className="btn" />
+      <Button className="btn">Launch App</Button>
     </HeroSectionContainer>
   );
 };

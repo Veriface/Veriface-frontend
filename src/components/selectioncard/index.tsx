@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import Typography from "../../utils/typography";
-import { MdOutlineCreateNewFolder } from "react-icons/md"
+
 import Link from "next/link";
 import Button from "../button";
+import { SelectCardType } from "../../types/types";
 
 
 const CardContainer = styled.div`
@@ -26,13 +27,13 @@ const CardContainer = styled.div`
   `
 
 
-const SelectionCard = () => {
+const SelectionCard = ({ Icon, btnText, content }: SelectCardType) => {
   return (
     <CardContainer>
-      <MdOutlineCreateNewFolder size="8rem" color="#B982FF" />
+      <Icon size="8rem" color="#B982FF" />
       <Typography font="bodyText" as="p" className="title">
-        Lorem ipsum dolor sit adipisicing elit. Illo minus sequi voluptates tempore laborum eveniet, accusantium.      </Typography>
-      <Button className="btn">Create Proposal</Button>
+        {content}</Typography>
+      <Button className="btn">{btnText}</Button>
     </CardContainer>
   )
 }

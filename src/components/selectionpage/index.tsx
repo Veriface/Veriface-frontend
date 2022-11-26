@@ -1,8 +1,8 @@
-import Typography from "../../utils/typography";
 import styled from "styled-components";
 import Flex from "../../utils/flex/flex";
 import Navigation from '../navigation'
 import SelectionCard from "../selectioncard";
+import { MdOutlineCreateNewFolder, MdPersonSearch } from "react-icons/md"
 
 
 const PageContainer = styled.div<{ img?: any }>`
@@ -21,8 +21,8 @@ const SelectionPage = () => {
         <PageContainer>
             <Navigation />
             <div className="cards">
-                <SelectionCard />
-                <SelectionCard />
+                <SelectionCard Icon={MdOutlineCreateNewFolder} btnText="Create Proposal" content="Lorem ipsum dolor sit adipisicing elit. Illo minus sequi voluptates tempore laborum eveniet, accusantium." />
+                <SelectionCard Icon={MdPersonSearch} btnText="Search Address" content="Lorem ipsum dolor sit adipisicing elit. Illo minus sequi voluptates tempore laborum eveniet, accusantium." />
             </div>
 
         </PageContainer>

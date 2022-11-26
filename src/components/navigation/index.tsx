@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Typography from "../../utils/typography";
 import Button from "../button";
 import Flex from "../../utils/flex/flex";
+import Link from "next/link";
 import { mediaQueries } from "../../utils/themes/mediaQueries";
 
 const NavContainer = styled(Flex)`
@@ -28,14 +29,15 @@ const NavContainer = styled(Flex)`
 `;
 
 const Navigation = () => {
-    return (
-      <NavContainer>
-        <Typography font="h3" as="h3" className="logo">
-         VERIFACE
-        </Typography>
-        <Button>Launch App</Button>
-      </NavContainer>
-    );
+  return (
+    <NavContainer>
+      <Typography font="h3" as="h3" className="logo">
+        VERIFACE
+      </Typography>
+      <Link href="/select-option">
+        <Button>Launch App</Button></Link>
+    </NavContainer>
+  );
 };
 
 export default Navigation;
