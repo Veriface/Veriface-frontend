@@ -50,7 +50,7 @@ const SectionContainer = styled(Flex)`
 
 const FeaturesSection = () => {
   return (
-    <SectionContainer>
+    <SectionContainer id="features">
       {Features.map((item) => (
         <FeatureCard key={item.id} {...item} />
       ))}

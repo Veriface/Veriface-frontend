@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Link from "next/link";
 import Typography from "../../utils/typography";
 import Button from "../button";
 import { mediaQueries } from "../../utils/themes/mediaQueries";
@@ -72,7 +73,9 @@ const HeroSection = () => {
         Buy, sell, and grow your crypto with Veriface, the platform dedicated
         to fishing out fraudsters.
       </Typography>
-      <Button className="btn">Launch App</Button>
+      <Link href="/select-option">
+        <Button className="btn">Launch App</Button>
+      </Link>
     </HeroSectionContainer>
   );
 };

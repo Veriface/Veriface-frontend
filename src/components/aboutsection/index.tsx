@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Flex from "../../utils/flex/flex";
+import Link from "next/link";
 import BackgroundImage from "../../../src/assets/bg-img.png";
 import { Button as ConnectButton } from "../../utils/button/button";
 import Typography from "../../utils/typography";
@@ -46,15 +47,18 @@ const Button = styled(ConnectButton)`
 
 const AboutSection = () => {
   return (
-    <AboutSectionContainer>
+    <AboutSectionContainer id="about">
       <Typography font="h2" as="h2" className="title">
-        A crypto investment platform <br/> that invests in you
+        A crypto investment platform <br /> that invests in you
       </Typography>
       <Typography font="bodyText" as="p" className="subtitle">
-        We invest more resources than any other platrom in making sure great<br/> 
+        We invest more resources than any other platrom in making sure great
+        <br />
         support from real people is a click away, whenever you need it.
       </Typography>
-      <Button>Launch App</Button>
+      <Link href="/select-option">
+        <Button>Launch App</Button>
+      </Link>
     </AboutSectionContainer>
   );
 }

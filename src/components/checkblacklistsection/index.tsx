@@ -13,6 +13,10 @@ const PageContainer = styled.div`
 const PageContent = styled.div`
   padding: 3rem 20%;
 
+  .title {
+    color: #b982ff;
+  }
+
   .col-1 {
     flex-direction: column;
     gap: 3rem;
@@ -51,6 +55,22 @@ const PageContent = styled.div`
     top: 50%;
     transform: translateY(-50%);
   }
+
+  .blacklist-card {
+    background: #b982ff;
+    border-radius: 5px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 0;
+    max-width: 80rem;
+    margin-top: 3rem;
+  }
+
+  .innerText {
+    color: red;
+  }
 `;
 
 const CheckBlackListPage = () => {
@@ -59,7 +79,7 @@ const CheckBlackListPage = () => {
       <Navigation />
       <PageContent>
         <Flex className="col-1">
-          <Typography font="h3" as="h3">
+          <Typography font="h3" as="h3" className="title">
             BLACKLIST CHECKER
           </Typography>
           <Typography font="bodyText" as="h3">
@@ -71,10 +91,20 @@ const CheckBlackListPage = () => {
         <div className="searchFieldWrapper">
           <input
             type="text"
+            value="address"
             className="searchInput"
             placeholder="Search Contract Address"
           />
           <BsSearch size="2rem" color="#b982ff" className="searchIcon" />
+        </div>
+
+        <div className="blacklist-card">
+          <Typography font="bodyText" as="h3">
+            Address: 0921897835zbndjqhd
+          </Typography>
+          <Typography font="bodyText" as="h3">
+            Status: <span className="innerText">BLACKLISTED!</span>
+          </Typography>
         </div>
       </PageContent>
     </PageContainer>
