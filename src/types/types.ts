@@ -16,3 +16,11 @@ export type SelectCardType = {
   content: string;
   href: string;
 };
+
+
+export type FormInputType = {
+  label: string;
+  type: string;
+  htmlFor: string;
+  value: string;
+}

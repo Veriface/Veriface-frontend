@@ -4,6 +4,7 @@ import Flex from "../../utils/flex/flex";
 import Typography from "../../utils/typography";
 import { mediaQueries } from "../../utils/themes/mediaQueries";
 import Button from "../button";
+import FormInput from "../forminput";
 
 const PageContainer = styled.div`
   background: #0b0b0f;
@@ -13,13 +14,21 @@ const PageContainer = styled.div`
 `;
 
 const PageContent = styled.div`
+  .proposal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 70%;
+    margin: 2rem auto;
+    background: #1a1b23;
+    border-radius: 1rem;
+    padding: 4rem 5rem;
+  }
 
-.proposal-form{
-display: flex;
-flex-direction: column;
-max-width: 75%;
-margin: 5rem auto;
-}`;
+  .btn {
+    align-self: center;
+  }
+`;
 
 const ProposalSection = () => {
   return (
@@ -27,18 +36,26 @@ const ProposalSection = () => {
       <Navigation />
       <PageContent>
         <form className="proposal-form">
-          <label htmlFor="name">Name</label>
-          <input type="text" name="name" required value="" />
-          <label htmlFor="txnId1">Transaction Id</label>
-          <input type="text" name="txnId1" required value="" />
-          <label htmlFor="txnId2">Transaction Id</label>
-          <input type="text" name="txnId2" value="" />
-          <label htmlFor="txnId2">Transaction Id</label>
-          <input type="text" name="txnId2" value="" />
-          <label htmlFor="reason">Reason(s) for blacklist</label>
-          <input type="text" name="reason" required value="" />
-
-          <Button>SUMBIT PROPOSAL</Button>
+          <FormInput label="Name" htmlFor="name" type="text" value="" />
+          <FormInput
+            label="Transaction Id"
+            htmlFor="name"
+            type="text"
+            value=""
+          />
+          <FormInput
+            label="Transaction Id"
+            htmlFor="name"
+            type="text"
+            value=""
+          />
+          <FormInput
+            label="Reason"
+            htmlFor="reason"
+            type="text"
+            value=""
+          />
+          <Button className="btn">SUMBIT PROPOSAL</Button>
         </form>
       </PageContent>
     </PageContainer>
