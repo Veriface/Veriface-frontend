@@ -1,7 +1,5 @@
 import Navigation from "../navigation";
 import styled from "styled-components";
-import Flex from "../../utils/flex/flex";
-import Typography from "../../utils/typography";
 import { mediaQueries } from "../../utils/themes/mediaQueries";
 import Button from "../button";
 import FormInput from "../forminput";
@@ -23,6 +21,12 @@ const PageContent = styled.div`
     background: #1a1b23;
     border-radius: 1rem;
     padding: 4rem 5rem;
+
+    ${mediaQueries.phone} {
+      max-width: 85%;
+      gap: 4rem;
+      margin: 8rem auto;
+    }
   }
 
   .btn {
@@ -55,7 +59,7 @@ const ProposalSection = () => {
             type="text"
             value=""
           />
-          <Button className="btn">SUMBIT PROPOSAL</Button>
+          <Button className="btn">Submit Proposal</Button>
         </form>
       </PageContent>
     </PageContainer>

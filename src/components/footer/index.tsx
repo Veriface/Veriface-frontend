@@ -20,6 +20,7 @@ const FooterTopSection = styled(Flex)`
     width: 50%;
     align-items: flex-start;
     gap: 2rem;
+    
     ${mediaQueries.phone} {
       width: 70%;
       gap: 1rem;
