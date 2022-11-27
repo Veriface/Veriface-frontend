@@ -39,7 +39,7 @@ const SelectionPage = () => {
           Icon={MdOutlineCreateNewFolder}
           btnText="Create Proposal"
           content="Lorem ipsum dolor sit adipisicing elit. Illo minus sequi voluptates tempore laborum eveniet, accusantium."
-          href="/check"
+          href="/createProposal"
         />
         <SelectionCard
           Icon={MdPersonSearch}

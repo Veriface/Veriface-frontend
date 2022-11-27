@@ -1,4 +1,3 @@
-import React from 'react'
 import SelectionPage from '../src/components/selectionpage'
 
 const SelectPage = () => {

@@ -69,6 +69,11 @@ const Footer = () => {
               Features
             </Typography>
           </Link>
+          <Link href="">
+            <Typography font="bodyText" as="h3">
+             Documentation
+            </Typography>
+          </Link>
         </Flex>
       </FooterTopSection>
       <FooterBottomSection>
