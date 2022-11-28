@@ -13,8 +13,8 @@ const StyledButton = styled(ConnectButton)`
   background: linear-gradient(225deg, #18c8ff 14.89%, #933ffe 85.85%);
 `;
 
-const Button:FunctionComponent<BtnProps> = ({className, children}) => {
-  return <StyledButton className={className}>{children}</StyledButton>;
+const Button:FunctionComponent<BtnProps> = ({className, type, children}) => {
+  return <StyledButton type={type} className={className}>{children}</StyledButton>;
 };
 
 export default Button;

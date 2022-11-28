@@ -1,8 +1,17 @@
 import styled from "styled-components";
-import Typography from "../../utils/typography";
 import { FormInputType } from "../../types/types";
+import { mediaQueries } from "../../utils/themes/mediaQueries";
 
 const FormFieldWrapper = styled.div`
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 160%;
+  letter-spacing: 0%;
+
+  ${mediaQueries.phone} {
+    font-size: 1.4rem;
+  }
+
   label {
     color: #b982ff;
 
@@ -26,15 +35,24 @@ const FormFieldWrapper = styled.div`
     }
   }
 `;
-const FormInput = ({ label, htmlFor, type }: FormInputType) => {
+const FormInput = ({
+  label,
+  htmlFor,
+  type,
+  onChange,
+  name,
+  value,
+}: FormInputType) => {
   return (
     <FormFieldWrapper>
-      <Typography font="bodyText" as="p" className="">
-        <label htmlFor={htmlFor}>{label}</label>
-      </Typography>
-      <Typography font="bodyText" as="p" className="">
-        <input type={type} name={label} required value="" />
-      </Typography>
+      <label htmlFor={htmlFor}>{label}</label>
+      <input
+        type={type}
+        required
+        value={value}
+        onChange={onChange}
+        name={name}
+      />
     </FormFieldWrapper>
   );
 };

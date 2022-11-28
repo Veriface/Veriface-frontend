@@ -1,3 +1,4 @@
+import { useState } from "react"; 
 import Navigation from "../navigation";
 import styled from "styled-components";
 import { mediaQueries } from "../../utils/themes/mediaQueries";
@@ -17,7 +18,7 @@ const PageContent = styled.div`
     flex-direction: column;
     gap: 2rem;
     max-width: 70%;
-    margin: 2rem auto;
+    margin: 1.5rem auto;
     background: #1a1b23;
     border-radius: 1rem;
     padding: 4rem 5rem;
@@ -31,35 +32,71 @@ const PageContent = styled.div`
 
   .btn {
     align-self: center;
+    margin-top: 1rem;
   }
 `;
 
+const defaultFormFields = {
+  name: "",
+  txnId1: "",
+  txnId2: "",
+  reason: "",
+};
+
 const ProposalSection = () => {
+  const [formFields, setFormFields] = useState(defaultFormFields);
+  const { name, txnId1, txnId2, reason } = formFields;
+  
+   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+     const { name, value } = event.target;
+
+     setFormFields({ ...formFields, [name]: value });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+  };
+  
   return (
     <PageContainer>
       <Navigation />
       <PageContent>
-        <form className="proposal-form">
-          <FormInput label="Name" htmlFor="name" type="text" value="" />
+        <form className="proposal-form" onSubmit={handleSubmit}>
           <FormInput
-            label="Transaction Id"
+            label="Name"
             htmlFor="name"
             type="text"
-            value=""
+            value={name}
+            name="name"
+            onChange={handleChange}
           />
           <FormInput
             label="Transaction Id"
             htmlFor="name"
             type="text"
-            value=""
+            name="txnId1"
+            value={txnId1}
+            onChange={handleChange}
+          />
+          <FormInput
+            label="Transaction Id"
+            htmlFor="name"
+            type="text"
+            name="txnId2"
+            value={txnId2}
+            onChange={handleChange}
           />
           <FormInput
             label="Reason"
             htmlFor="reason"
             type="text"
-            value=""
+            name="reason"
+            value={reason}
+            onChange={handleChange}
           />
-          <Button className="btn">Submit Proposal</Button>
+          <Button type="submit" className="btn">
+            Submit Proposal
+          </Button>
         </form>
       </PageContent>
     </PageContainer>

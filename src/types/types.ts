@@ -1,3 +1,5 @@
+import { ChangeEvent, ChangeEventHandler } from "react";
+
 export type FeatureCardType = {
   id: number;
   Icon: any;
@@ -8,6 +10,7 @@ export type FeatureCardType = {
 export type BtnProps = {
   className?: string;
   children: React.ReactNode;
+  type?: "button" | "reset" | "submit" | undefined;
 };
 
 export type SelectCardType = {
@@ -19,8 +22,10 @@ export type SelectCardType = {
 
 
 export type FormInputType = {
+  name: string;
   label: string;
   type: string;
   htmlFor: string;
   value: string;
-}
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+};
