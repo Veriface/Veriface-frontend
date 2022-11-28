@@ -4,6 +4,8 @@ import Flex from "../../utils/flex/flex";
 import Typography from "../../utils/typography";
 import { BsSearch } from "react-icons/bs";
 import { mediaQueries } from "../../utils/themes/mediaQueries";
+import connectContract from "../../connectContract";
+import { useState } from "react";
 
 const PageContainer = styled.div`
   background: #0b0b0f;
@@ -84,6 +86,25 @@ const PageContent = styled.div`
 `;
 
 const CheckBlackListPage = () => {
+  const [address, setAddress] = useState("");
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setAddress(event.target.value);
+  };
+
+  const blacklistContract = connectContract();
+
+  const handleCheck = async (e: any) => {
+    e.preventDefault();
+    setAddress("");
+
+    if (blacklistContract) {
+      const result = await blacklistContract.retrieveAddressStatus(address);
+      console.log(result)
+    }
+  };
+
+  console.log(address)
   return (
     <PageContainer>
       <Navigation />
@@ -101,11 +122,12 @@ const CheckBlackListPage = () => {
         <div className="searchFieldWrapper">
           <input
             type="text"
-            value="address"
+            value={address}
+            onChange={handleChange}
             className="searchInput"
             placeholder="Search Contract Address"
           />
-          <BsSearch size="2rem" color="#b982ff" className="searchIcon" />
+          <BsSearch size="2rem" color="#b982ff" className="searchIcon" onClick={handleCheck} />
         </div>
 
         <div className="blacklist-card">
