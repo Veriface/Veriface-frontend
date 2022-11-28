@@ -66,12 +66,12 @@ const HeroSection = () => {
   return (
     <HeroSectionContainer>
       <Typography font="title" as="h1" className="title">
-        We make crypto <br />
-        clear and simple
+        We make web3 <br />
+        more secure
       </Typography>
       <Typography font="bodyText" as="p" className="subtext">
-        Buy, sell, and grow your crypto with Veriface, the platform dedicated
-        to fishing out fraudsters.
+        Veriface is a verification interface that allows you to limit interactions with bad actors
+        in your smart contract.
       </Typography>
       <Link href="/select-option">
         <Button className="btn">Launch App</Button>

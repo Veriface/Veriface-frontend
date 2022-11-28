@@ -11,15 +11,19 @@ const AboutSectionContainer = styled(Flex)<{ img?: any }>`
   background-size: contain;
   background-position: right;
   background-repeat: no-repeat;
-  padding: 8rem 9rem 12rem;
+  padding: 8rem 20rem 12rem;
   flex-direction: column;
+
+  ${mediaQueries.tabport} {
+    padding: 8rem 10rem 12rem;
+  }
 
   ${mediaQueries.phone} {
     padding: 8rem 5rem 12rem;
   }
 
   ${mediaQueries.smallerphone} {
-    padding: 15rem 2rem;
+    padding: 15rem 2.5rem;
   }
 
   .title {
@@ -49,12 +53,12 @@ const AboutSection = () => {
   return (
     <AboutSectionContainer id="about">
       <Typography font="h2" as="h2" className="title">
-        A crypto investment platform <br /> that invests in you
+        A truly decentralized DAO
       </Typography>
       <Typography font="bodyText" as="p" className="subtitle">
-        We invest more resources than any other platrom in making sure great
-        <br />
-        support from real people is a click away, whenever you need it.
+        Veriface is run by a DAO, so anyone can become a part of us once
+        they are digitally verified. Our blacklist and whitelist processes are transparent and can be
+        adequately relied upon by third-party contracts and end-users.
       </Typography>
       <Link href="/select-option">
         <Button>Launch App</Button>

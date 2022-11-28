@@ -4,28 +4,27 @@ import FeatureCard from "../featurecard";
 import { FaWallet } from "react-icons/fa";
 import { mediaQueries } from "../../utils/themes/mediaQueries";
 
-
 const Features = [
   {
     id: 1,
     Icon: FaWallet,
-    title: "Connect Wallet",
+    title: "Implement the Interface",
     content:
-      "Invest in crypto anytime, anywhere with our safe, secure, and easy to use online platform.",
+      "Implement the Veriface Interface in your contracts to check if an address is blacklisted by our protocol.",
   },
   {
     id: 2,
     Icon: FaWallet,
     title: "Verify Address",
     content:
-      "Invest in crypto anytime, anywhere with our safe, secure, and easy to use online platform.",
+      "Verify any account's address and get feedback on the address health within the ecosystem.",
   },
   {
     id: 3,
     Icon: FaWallet,
     title: "Propose a Blacklist",
     content:
-      "Invest in crypto anytime, anywhere with our safe, secure, and easy to use online platform.",
+      "Propose a blacklist of a bad actor. Our blacklist and whitelist processes are transparent and decentralized.",
   },
 ];
 

@@ -20,7 +20,7 @@ const FooterTopSection = styled(Flex)`
     width: 50%;
     align-items: flex-start;
     gap: 2rem;
-    
+
     ${mediaQueries.phone} {
       width: 70%;
       gap: 1rem;
@@ -53,10 +53,9 @@ const Footer = () => {
             VERIFACE
           </Typography>
           <Typography font="bodyText" as="h3">
-            Veriface, the world’s leading crypto blacklist app, makes it so
-            flippin’ easy to buy and sell bitcoin via cash, card, or bank
-            transfer. Sign up to get the latest in CoinFlip news, discounts,
-            and more.
+            Veriface, the world’s leading crypto blacklist app, is a
+            verification interface you can implement into
+            your smart contract to limit interactions with bad actors.
           </Typography>
         </Flex>
         <Flex className="col-2">
@@ -70,9 +69,9 @@ const Footer = () => {
               Features
             </Typography>
           </Link>
-          <Link href="">
+          <Link href="https://veriface.gitbook.io/veriface/" target="_blank">
             <Typography font="bodyText" as="h3">
-             Documentation
+              Documentation
             </Typography>
           </Link>
         </Flex>

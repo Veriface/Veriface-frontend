@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Typography from "../../utils/typography";
 import Link from "next/link";
-
+import { mediaQueries } from "../../utils/themes/mediaQueries";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { FeatureCardType } from "../../types/types";
 
@@ -12,9 +12,11 @@ const CardContainer = styled.div`
   display: grid;
   place-items: center;
   gap: 2rem;
+  align-self: stretch;
 
   .title {
     color: #fff;
+    text-align: center;
   }
 
   .subtitle {
@@ -25,7 +27,7 @@ const CardContainer = styled.div`
   .linkText {
     display: flex;
     align-items: center;
-    gap: .5rem;
+    gap: 0.5rem;
   }
 `;
 
