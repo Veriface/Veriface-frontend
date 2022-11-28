@@ -38,13 +38,13 @@ const SelectionPage = () => {
         <SelectionCard
           Icon={MdOutlineCreateNewFolder}
           btnText="Create Proposal"
-          content="Lorem ipsum dolor sit adipisicing elit. Illo minus sequi voluptates tempore laborum eveniet, accusantium."
+          content="Get rid of bad actors in the crypto ecosystem by submitting a proposal to get them blacklisted."
           href="/createProposal"
         />
         <SelectionCard
           Icon={MdPersonSearch}
           btnText="Search Address"
-          content="Lorem ipsum dolor sit adipisicing elit. Illo minus sequi voluptates tempore laborum eveniet, accusantium."
+          content=" Input any account's address and get feedback on the address health within the ecosystem."
           href="/check"
         />
       </div>

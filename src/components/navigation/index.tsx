@@ -3,6 +3,7 @@ import Typography from "../../utils/typography";
 import Button from "../button";
 import Flex from "../../utils/flex/flex";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { mediaQueries } from "../../utils/themes/mediaQueries";
 
 const NavContainer = styled(Flex)`
@@ -29,13 +30,17 @@ const NavContainer = styled(Flex)`
 `;
 
 const Navigation = () => {
+  const router = useRouter();
   return (
     <NavContainer>
       <Typography font="h3" as="h3" className="logo">
         VERIFACE
       </Typography>
-      <Link href="/select-option">
-        <Button>Launch App</Button></Link>
+      {router.asPath === "/" && (
+        <Link href="/select-option">
+          <Button>Launch App</Button>
+        </Link>
+      )}
     </NavContainer>
   );
 };

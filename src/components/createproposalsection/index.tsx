@@ -16,12 +16,12 @@ const PageContent = styled.div`
   .proposal-form {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
     max-width: 70%;
-    margin: 1.5rem auto;
+    margin: 1rem auto;
     background: #1a1b23;
     border-radius: 1rem;
-    padding: 4rem 5rem;
+    padding: 3rem 5rem;
 
     ${mediaQueries.phone} {
       max-width: 85%;
@@ -40,12 +40,13 @@ const defaultFormFields = {
   name: "",
   txnId1: "",
   txnId2: "",
-  reason: "",
+  reason1: "",
+  reason2: "",
 };
 
 const ProposalSection = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
-  const { name, txnId1, txnId2, reason } = formFields;
+  const { name, txnId1, txnId2, reason1, reason2 } = formFields;
   
    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
      const { name, value } = event.target;
@@ -71,7 +72,7 @@ const ProposalSection = () => {
             onChange={handleChange}
           />
           <FormInput
-            label="Transaction Id"
+            label="Transaction ID"
             htmlFor="name"
             type="text"
             name="txnId1"
@@ -79,7 +80,15 @@ const ProposalSection = () => {
             onChange={handleChange}
           />
           <FormInput
-            label="Transaction Id"
+            label="Reason"
+            htmlFor="reason"
+            type="text"
+            name="reason1"
+            value={reason1}
+            onChange={handleChange}
+          />
+          <FormInput
+            label="Transaction ID"
             htmlFor="name"
             type="text"
             name="txnId2"
@@ -90,8 +99,8 @@ const ProposalSection = () => {
             label="Reason"
             htmlFor="reason"
             type="text"
-            name="reason"
-            value={reason}
+            name="reason2"
+            value={reason2}
             onChange={handleChange}
           />
           <Button type="submit" className="btn">

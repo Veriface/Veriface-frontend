@@ -87,6 +87,7 @@ const PageContent = styled.div`
 
 const CheckBlackListPage = () => {
   const [address, setAddress] = useState("");
+  const [status, setStatus] = useState(false);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setAddress(event.target.value);
@@ -100,11 +101,16 @@ const CheckBlackListPage = () => {
 
     if (blacklistContract) {
       const result = await blacklistContract.retrieveAddressStatus(address);
-      console.log(result)
+      console.log(result);
+      if (result === true) {
+        setStatus(true);
+      } else {
+        setStatus(false);
+      }
     }
   };
 
-  console.log(address)
+  console.log(address);
   return (
     <PageContainer>
       <Navigation />
@@ -114,9 +120,9 @@ const CheckBlackListPage = () => {
             BLACKLIST CHECKER
           </Typography>
           <Typography font="bodyText" as="h3">
-            Check IMEI/SN find out All Info about your Device, including
-            Blacklist, SimLock, Model, Warranty for FREE. All Devices supported,
-            including Apple, iPhone, Huawei and Samsung.
+            The Veriface Blacklist Checker allows you to check the status of any
+            user's address, whether they have been blacklisted by our protocol.
+            Enter the address to get started.
           </Typography>
         </Flex>
         <div className="searchFieldWrapper">
@@ -125,19 +131,26 @@ const CheckBlackListPage = () => {
             value={address}
             onChange={handleChange}
             className="searchInput"
-            placeholder="Search Contract Address"
+            placeholder="Search User Address"
           />
-          <BsSearch size="2rem" color="#b982ff" className="searchIcon" onClick={handleCheck} />
+          <BsSearch
+            size="2rem"
+            color="#b982ff"
+            className="searchIcon"
+            onClick={handleCheck}
+          />
         </div>
 
-        <div className="blacklist-card">
-          <Typography font="bodyText" as="h3">
-            Address: 0921897835zbndjqhd
-          </Typography>
-          <Typography font="bodyText" as="h3">
-            Status: <span className="innerText">BLACKLISTED!</span>
-          </Typography>
-        </div>
+        {status && (
+          <div className="blacklist-card">
+            <Typography font="bodyText" as="h3">
+              Address: {address}
+            </Typography>
+            <Typography font="bodyText" as="h3">
+              Status: <span className="innerText">BLACKLISTED!</span>
+            </Typography>
+          </div>
+        )}
       </PageContent>
     </PageContainer>
   );

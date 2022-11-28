@@ -12,6 +12,7 @@ const CardContainer = styled.div`
   display: grid;
   place-items: center;
   gap: 3rem;
+  align-self: stretch;
 
   .title {
     text-align: center;
