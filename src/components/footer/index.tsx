@@ -1,10 +1,10 @@
+import Link from "next/link";
 import styled from "styled-components";
 import Flex from "../../utils/flex/flex";
-import Link from "next/link";
-import { CiTwitter } from "react-icons/ci";
-import { AiOutlineCopyrightCircle } from "react-icons/ai";
 import Typography from "../../utils/typography";
 import { mediaQueries } from "../../utils/themes/mediaQueries";
+import { CiTwitter } from "react-icons/ci";
+import { AiOutlineCopyrightCircle } from "react-icons/ai";
 
 const FooterSectionContainer = styled.div`
   color: grey;
@@ -54,8 +54,8 @@ const Footer = () => {
           </Typography>
           <Typography font="bodyText" as="h3">
             Veriface, the world’s leading crypto blacklist app, is a
-            verification interface you can implement into
-            your smart contract to limit interactions with bad actors.
+            verification interface you can implement into your smart contract to
+            limit interactions with bad actors.
           </Typography>
         </Flex>
         <Flex className="col-2">

@@ -7,7 +7,6 @@ const connectContract = () => {
   const provider = new ethers.providers.JsonRpcProvider(
     "https://polygon-mumbai.g.alchemy.com/v2/Mm0Lzxa6i2fwV1eu3p_EC4D_rS5Ob9uj"
   );
-  console.log(provider)
 
   let blacklistContract;
   try {

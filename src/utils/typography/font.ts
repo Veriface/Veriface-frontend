@@ -76,18 +76,6 @@ const bodyTextb = {
   fontWeight: 600,
 };
 
-const smallText = {
-  fontWeight: 500,
-  fontSize: "1.2rem",
-  lineHeight: "160%",
-  letterSpacing: "0%",
-};
-
-const smallTextb = {
-  ...smallText,
-  fontWeight: 700,
-};
-
 let typography: {
   [key: string]: BaseFonts;
 } = {};
@@ -100,9 +88,7 @@ typography = {
   h3b,
   bodyText,
   bodyTextb,
-  title,
-  smallText,
-  smallTextb,
+  title
 };
 
 export default typography;

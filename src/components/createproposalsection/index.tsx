@@ -1,9 +1,9 @@
 import { useState } from "react"; 
 import Navigation from "../navigation";
-import styled from "styled-components";
-import { mediaQueries } from "../../utils/themes/mediaQueries";
 import Button from "../button";
 import FormInput from "../forminput";
+import styled from "styled-components";
+import { mediaQueries } from "../../utils/themes/mediaQueries";
 
 const PageContainer = styled.div`
   background: ${({ theme }) => theme.colors.black};

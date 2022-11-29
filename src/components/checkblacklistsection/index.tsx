@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Navigation from "../navigation";
 import styled from "styled-components";
 import Flex from "../../utils/flex/flex";
@@ -5,7 +6,6 @@ import Typography from "../../utils/typography";
 import { BsSearch } from "react-icons/bs";
 import { mediaQueries } from "../../utils/themes/mediaQueries";
 import connectContract from "../../connectContract";
-import { useState } from "react";
 
 const PageContainer = styled.div`
   background: #0b0b0f;
@@ -91,14 +91,13 @@ const PageContent = styled.div`
 
 const CheckBlackListPage = () => {
   const [address, setAddress] = useState("");
-  const [status, setStatus] = useState(false);
-  const [checked, setChecked] = useState(false)
+  const [status, setStatus] = useState(false);;
+  const [checked, setChecked] = useState(false);
   const [searchValue, setSearchValue] = useState("")
-
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setAddress(event.target.value);
-    setChecked(false)
+    setChecked(false);
     setSearchValue(event.target.value)
   };
 
@@ -115,7 +114,7 @@ const CheckBlackListPage = () => {
         setStatus(true);
       } else {
         setStatus(false);
-      }
+      };
       setChecked(true)
     }
   };
@@ -130,8 +129,8 @@ const CheckBlackListPage = () => {
             BLACKLIST CHECKER
           </Typography>
           <Typography font="bodyText" as="h3">
-            The Veriface Blacklist Checker allows you to check the status of any
-            user's address that has been blacklisted by our protocol.
+            The Veriface Blacklist Checker allows you to check the st Enter theatus of any
+          sdress that has been blacklisted by our protocol.
             Enter the address to get started.
           </Typography>
         </Flex>

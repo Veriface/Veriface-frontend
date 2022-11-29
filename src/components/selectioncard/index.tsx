@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import Typography from "../../utils/typography";
-
 import Link from "next/link";
 import Button from "../button";
+import Typography from "../../utils/typography";
 import { SelectCardType } from "../../types/types";
 
 const CardContainer = styled.div`

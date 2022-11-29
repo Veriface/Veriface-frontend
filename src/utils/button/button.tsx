@@ -21,9 +21,4 @@ export const Button = styled.button<{
   background: none;
   text-transform: uppercase;
   cursor: pointer;
-
-  ${mediaQueries.phone} {
-    /* font-size: 1.4rem;
-    width: 20.4rem; */
-  }
 `;
