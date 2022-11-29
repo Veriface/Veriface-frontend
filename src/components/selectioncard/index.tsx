@@ -6,7 +6,7 @@ import Button from "../button";
 import { SelectCardType } from "../../types/types";
 
 const CardContainer = styled.div`
-  background: #1a1b23;
+  background: ${({ theme }) => theme.colors.lighterGrey};
   border-radius: 2.5rem;
   padding: 5rem 2.5rem;
   display: grid;
@@ -21,7 +21,7 @@ const CardContainer = styled.div`
   .btn {
     background: none;
     border: 1px solid #b982ff;
-    color: #b982ff;
+    color: ${({ theme }) => theme.colors.purple};
   }
 `;
 

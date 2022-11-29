@@ -6,7 +6,7 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 import { FeatureCardType } from "../../types/types";
 
 const CardContainer = styled.div`
-  background: #1a1b23;
+  background: ${({ theme }) => theme.colors.lighterGrey};
   border-radius: 2.5rem;
   padding: 3rem 2rem;
   display: grid;

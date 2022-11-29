@@ -13,7 +13,7 @@ const FormFieldWrapper = styled.div`
   }
 
   label {
-    color: #b982ff;
+    color: ${({ theme }) => theme.colors.purple};
 
     &::after {
       content: " *";
@@ -27,7 +27,7 @@ const FormFieldWrapper = styled.div`
     margin-top: 1rem;
     border: 1px solid #b982ff;
     border-radius: 5px;
-    color: white;
+    color: ${({ theme }) => theme.colors.white};
     padding: 1rem;
 
     &:focus {

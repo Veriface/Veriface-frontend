@@ -9,7 +9,7 @@ import { useState } from "react";
 
 const PageContainer = styled.div`
   background: #0b0b0f;
-  color: white;
+  color: ${({ theme }) => theme.colors.white};
   height: 100vh;
   overflow-y: scroll;
 `;
@@ -22,7 +22,7 @@ const PageContent = styled.div`
   }
 
   .title {
-    color: #b982ff;
+    color: ${({ theme }) => theme.colors.purple};
   }
 
   .col-1 {
@@ -49,12 +49,12 @@ const PageContent = styled.div`
     padding: 1.6rem;
     padding-right: 5.8rem;
     height: 100%;
-    color: white;
+    color: ${({ theme }) => theme.colors.white};
     font-size: 1.5rem;
   }
 
   .searchInput::placeholder {
-    color: grey;
+    color: ${({ theme }) => theme.colors.grey};
   }
 
   .searchIcon {
@@ -65,7 +65,7 @@ const PageContent = styled.div`
   }
 
   .blacklist-card {
-    background: #b982ff;
+    background: ${({ theme }) => theme.colors.purple};
     border-radius: 5px;
     color: black;
     display: flex;
@@ -80,24 +80,33 @@ const PageContent = styled.div`
     }
   }
 
-  .innerText {
+  .blacklistText {
     color: red;
+  }
+
+  .whitelistText {
+    color: #56f156;
   }
 `;
 
 const CheckBlackListPage = () => {
   const [address, setAddress] = useState("");
   const [status, setStatus] = useState(false);
+  const [checked, setChecked] = useState(false)
+  const [searchValue, setSearchValue] = useState("")
+
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setAddress(event.target.value);
+    setChecked(false)
+    setSearchValue(event.target.value)
   };
 
   const blacklistContract = connectContract();
 
   const handleCheck = async (e: any) => {
     e.preventDefault();
-    setAddress("");
+    setSearchValue("");
 
     if (blacklistContract) {
       const result = await blacklistContract.retrieveAddressStatus(address);
@@ -107,6 +116,7 @@ const CheckBlackListPage = () => {
       } else {
         setStatus(false);
       }
+      setChecked(true)
     }
   };
 
@@ -121,14 +131,14 @@ const CheckBlackListPage = () => {
           </Typography>
           <Typography font="bodyText" as="h3">
             The Veriface Blacklist Checker allows you to check the status of any
-            user's address, whether they have been blacklisted by our protocol.
+            user's address that has been blacklisted by our protocol.
             Enter the address to get started.
           </Typography>
         </Flex>
         <div className="searchFieldWrapper">
           <input
             type="text"
-            value={address}
+            value={searchValue}
             onChange={handleChange}
             className="searchInput"
             placeholder="Search User Address"
@@ -141,13 +151,18 @@ const CheckBlackListPage = () => {
           />
         </div>
 
-        {status && (
+        {checked && (
           <div className="blacklist-card">
             <Typography font="bodyText" as="h3">
               Address: {address}
             </Typography>
             <Typography font="bodyText" as="h3">
-              Status: <span className="innerText">BLACKLISTED!</span>
+              Status:{" "}
+              {status === true ? (
+                <span className="blacklistText">BLACKLISTED!</span>
+              ) : (
+                <span className="whitelistText">CLEAN</span>
+              )}
             </Typography>
           </div>
         )}

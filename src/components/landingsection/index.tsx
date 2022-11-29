@@ -4,9 +4,9 @@ import FeaturesSection from "../features";
 import Footer from "../footer";
 import HomeSection from "../homesection";
 
-const HomeContainer = styled.div<{ img?: any }>`
-  background: #0b0b0f;
-  color: white;
+const HomeContainer = styled.div`
+  background: ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.white};
 `;
 
 const LandingSection = () => {

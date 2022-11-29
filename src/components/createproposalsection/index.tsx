@@ -6,8 +6,8 @@ import Button from "../button";
 import FormInput from "../forminput";
 
 const PageContainer = styled.div`
-  background: #0b0b0f;
-  color: white;
+  background: ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.white};
   height: 100vh;
   overflow-y: scroll;
 `;
@@ -19,7 +19,7 @@ const PageContent = styled.div`
     gap: 1.5rem;
     max-width: 70%;
     margin: 1rem auto;
-    background: #1a1b23;
+    background: ${({ theme }) => theme.colors.lighterGrey};
     border-radius: 1rem;
     padding: 3rem 5rem;
 

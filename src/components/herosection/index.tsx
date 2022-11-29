@@ -70,7 +70,7 @@ const HeroSection = () => {
         more secure
       </Typography>
       <Typography font="bodyText" as="p" className="subtext">
-        Veriface is a verification interface that allows you to limit interactions with bad actors
+        Veriface is a verification interface that helps you limit interactions with bad actors
         in your smart contract.
       </Typography>
       <Link href="/select-option">

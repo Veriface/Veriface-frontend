@@ -58,7 +58,7 @@ const AboutSection = () => {
       <Typography font="bodyText" as="p" className="subtitle">
         Veriface is run by a DAO, so anyone can become a part of us once
         they are digitally verified. Our blacklist and whitelist processes are transparent and can be
-        adequately relied upon by third-party contracts and end-users.
+        adequately relied on by third-party contracts and end-users.
       </Typography>
       <Link href="/select-option">
         <Button>Launch App</Button>
