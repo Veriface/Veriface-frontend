@@ -1,8 +1,10 @@
 import { useState } from "react";
-import Navigation from "../navigation";
 import styled from "styled-components";
 import Flex from "../../utils/flex/flex";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Typography from "../../utils/typography";
+import Navigation from "../navigation";
 import { BsSearch } from "react-icons/bs";
 import { mediaQueries } from "../../utils/themes/mediaQueries";
 import connectContract from "../../connectContract";
@@ -91,14 +93,14 @@ const PageContent = styled.div`
 
 const CheckBlackListPage = () => {
   const [address, setAddress] = useState("");
-  const [status, setStatus] = useState(false);;
+  const [status, setStatus] = useState(false);
   const [checked, setChecked] = useState(false);
-  const [searchValue, setSearchValue] = useState("")
+  const [searchValue, setSearchValue] = useState("");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setAddress(event.target.value);
     setChecked(false);
-    setSearchValue(event.target.value)
+    setSearchValue(event.target.value);
   };
 
   const blacklistContract = connectContract();
@@ -106,16 +108,28 @@ const CheckBlackListPage = () => {
   const handleCheck = async (e: any) => {
     e.preventDefault();
     setSearchValue("");
-
-    if (blacklistContract) {
-      const result = await blacklistContract.retrieveAddressStatus(address);
-      console.log(result);
-      if (result === true) {
-        setStatus(true);
-      } else {
-        setStatus(false);
-      };
-      setChecked(true)
+    try {
+      if (blacklistContract) {
+        const result = await blacklistContract.retrieveAddressStatus(address);
+        console.log(result);
+        if (result === true) {
+          setStatus(true);
+        } else {
+          setStatus(false);
+        }
+        setChecked(true);
+      }
+    } catch (error) {
+      toast.error("Please ensure the user address is correct.", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
     }
   };
 
@@ -129,9 +143,9 @@ const CheckBlackListPage = () => {
             BLACKLIST CHECKER
           </Typography>
           <Typography font="bodyText" as="h3">
-            The Veriface Blacklist Checker allows you to check the st Enter theatus of any
-          sdress that has been blacklisted by our protocol.
-            Enter the address to get started.
+            The Veriface Blacklist Checker allows you to check any address that
+            has been blacklisted by our protocol. Enter the address to get
+            started.
           </Typography>
         </Flex>
         <div className="searchFieldWrapper">
@@ -165,6 +179,7 @@ const CheckBlackListPage = () => {
             </Typography>
           </div>
         )}
+        <ToastContainer />
       </PageContent>
     </PageContainer>
   );
