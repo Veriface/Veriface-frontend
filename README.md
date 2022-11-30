@@ -6,6 +6,7 @@ Tech Stack:
 - CSS
 - Ethers.js
 - Vercel
+- Styled Components
 
 ## Product use
 - The frontend interface allows anyone to quickly see whether an account has been blacklisted
