@@ -59,11 +59,6 @@ const Footer = () => {
           </Typography>
         </Flex>
         <Flex className="col-2">
-          <Link href="#about">
-            <Typography font="bodyText" as="h3">
-              About
-            </Typography>
-          </Link>
           <Link href="#features">
             <Typography font="bodyText" as="h3">
               Features

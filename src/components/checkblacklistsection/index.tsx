@@ -39,6 +39,7 @@ const PageContent = styled.div`
 
   .searchFieldWrapper {
     position: relative;
+    margin: 0 auto;
     max-width: 80rem;
     width: 100%;
   }
