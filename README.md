@@ -16,4 +16,10 @@ or whitelisted by the veriface DAO
 If you're not implementing account security  checks via a smart contract you can equally implement them manually using our website. Input any account's address and get feedback on the address health within the ecosystem. A blacklisted Address will typically show the reason for the blacklist and the transactions that were examined before it was blacklisted. White-listed addresses would have to pass our personal identification to ensure that they are to be trusted.
 
 ## Tutorial
-![Front image](https://cdn.discordapp.com/attachments/1041029251165585519/1047496240507662406/Screenshot_72.png/500x500)
+![Front image](https://cdn.discordapp.com/attachments/1041029251165585519/1047496240507662406/Screenshot_72.png)
+
+#### check address status
+![blacklisted address check](https://media.discordapp.net/attachments/1041029251165585519/1047496239807221800/Screenshot_74.png?width=1056&height=594)
+
+#### join the vefi dao
+![Vefi Dao](https://user-images.githubusercontent.com/34872543/204822441-81c0e64c-6a86-411a-a44d-b741a68ce275.png)
