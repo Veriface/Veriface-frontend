@@ -82,6 +82,42 @@ const PageContent = styled.div`
     }
   }
 
+  .loader {
+    background: ${({ theme }) => theme.colors.purple};
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0;
+    max-width: 80rem;
+    margin-top: 3rem;
+
+    & > div {
+      width: 16px;
+      height: 16px;
+      margin: 3px 6px;
+      border-radius: 50%;
+      background-color: #fff;
+      opacity: 1;
+      animation: bouncing-loader 0.6s infinite alternate;
+    }
+
+    @keyframes bouncing-loader {
+      to {
+        opacity: 0.1;
+        transform: translateY(-16px);
+      }
+    }
+
+    .bouncing-loader > div:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .bouncing-loader > div:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+  }
+
   .blacklistText {
     color: red;
   }
@@ -95,6 +131,7 @@ const CheckBlackListPage = () => {
   const [address, setAddress] = useState("");
   const [status, setStatus] = useState(false);
   const [checked, setChecked] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [searchValue, setSearchValue] = useState("");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -108,6 +145,7 @@ const CheckBlackListPage = () => {
   const handleCheck = async (e: any) => {
     e.preventDefault();
     setSearchValue("");
+    setLoading(true);
     try {
       if (blacklistContract) {
         const result = await blacklistContract.retrieveAddressStatus(address);
@@ -117,9 +155,11 @@ const CheckBlackListPage = () => {
         } else {
           setStatus(false);
         }
+        setLoading(false);
         setChecked(true);
       }
     } catch (error) {
+      setLoading(false);
       toast.error("Please ensure the user address is correct.", {
         position: "top-center",
         autoClose: 5000,
@@ -133,7 +173,12 @@ const CheckBlackListPage = () => {
     }
   };
 
-  console.log(address);
+  const handleEnterKey = (e: React.KeyboardEvent<HTMLElement>) => {
+    if (e.key === "Enter") {
+      handleCheck(e);
+    }
+  };
+
   return (
     <PageContainer>
       <Navigation />
@@ -155,6 +200,7 @@ const CheckBlackListPage = () => {
             onChange={handleChange}
             className="searchInput"
             placeholder="Search User Address"
+            onKeyDown={handleEnterKey}
           />
           <BsSearch
             size="2rem"
@@ -177,6 +223,14 @@ const CheckBlackListPage = () => {
                 <span className="whitelistText">CLEAN</span>
               )}
             </Typography>
+          </div>
+        )}
+
+        {loading && (
+          <div className="loader">
+            <div></div>
+            <div></div>
+            <div></div>
           </div>
         )}
         <ToastContainer />
