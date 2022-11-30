@@ -1,6 +1,7 @@
 # The Veriface User Interface
 
 Tech Stack:
+- Mumbai(Polygon Testnet)
 - Typescript
 - Next.js
 - CSS
