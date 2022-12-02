@@ -30,5 +30,8 @@ or whitelisted by the veriface DAO
 #### Check address status
 ![<img src="https://cdn.discordapp.com/attachments/1041029251165585519/1047558953401331712/Screenshot_82.png" width="190"/>](https://cdn.discordapp.com/attachments/1041029251165585519/1047558953401331712/Screenshot_82.png)
 
-#### Join the vefi dao
+#### Make requests
+![<img src="https://cdn.discordapp.com/attachments/1041029251165585519/1048053279512338452/page.jpeg" width="190px" />](https://cdn.discordapp.com/attachments/1041029251165585519/1048053279512338452/page.jpeg)
+
+#### The vefi dao
 ![<img src="https://cdn.discordapp.com/attachments/1041029251165585519/1047558953023840346/Screenshot_83.png" width="190px" />](https://cdn.discordapp.com/attachments/1041029251165585519/1047558953023840346/Screenshot_83.png)
