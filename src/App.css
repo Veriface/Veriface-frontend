@@ -1,5 +1,14 @@
 .App {
   text-align: center;
+  color: white;
+
+}
+
+
+
+@font-face {
+  font-family: 'annurati-font';
+  src: url('assets/Anurati-Regular.otf');
 }
 
 .App-logo {
@@ -32,7 +41,19 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.contain {
+  padding: 0px 100px !important;
+  background: rgb(224, 224, 224);
+}
+
+.box {
+  box-shadow: 1px 1px 3px rgb(206, 206, 206);
+  border-radius: 5px;
 }
